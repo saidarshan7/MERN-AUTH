@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');  //it contains all schema of the database
 
 //connect to mongoose
-mongoose.connect('mongodb+srv://sai123:UQgIJdWsJSnWyaP3@task-man.lcbwb.mongodb.net/course_selling').then(()=>{ console.log("connected")})
+mongoose.connect('DBconnect').then(()=>{ console.log("connected")})
 .catch((err)=>{
     console.log(err)
 });
