@@ -7,37 +7,28 @@ function App() {
 
 
 return <>
- <CardWrapper  innerComponent ={<TextComponent/>} />
- <CardWrapper  innerComponent ={<View/>} />
+ <CardWrapper>
+  hello There
+ </CardWrapper>
 
  
 
 </>
 
 }
-export default App
-
-function TextComponent() {
-  return <div>
-    Hello There
-  </div>
-}
-
-function View() {
-  return <div>
-    hello There22
-  </div>
-}
 
 
-function CardWrapper({innerComponent}) {
+
+function CardWrapper({children}) {
 return <div style={{border:"2px solid white" ,padding:"20px"}}>
-  {innerComponent }
-
+ 
+{children}
 
 </div>
 }
  
+export default App
+
 // const [todos, setTodods] = useState([{
 //   id:1,
 //   title:"go to gym",
