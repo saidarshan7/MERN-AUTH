@@ -3,50 +3,84 @@ import React,{ memo, useState,Fragment } from 'react'
 import './App.css'
 
 function App() {
+
+
+
+return <>
+ <CardWrapper  innerComponent ={<TextComponent/>} />
+ <CardWrapper  innerComponent ={<View/>} />
+
  
-const [todos, setTodods] = useState([{
-  id:1,
-  title:"go to gym",
-  description:"got to gym today"
-},
-{
-  id:2,
-  title:"go to room",
-  description:"got to bed today"
-},
-{
-  id:3,
-  title:"go to ground",
-  description:"play something today"
+
+</>
+
+}
+export default App
+
+function TextComponent() {
+  return <div>
+    Hello There
+  </div>
 }
 
-])
-
-function addTodo() {
-  setTodods([...todos,{
-    id:counter++,
-    title:Math.round(),
-    description:Math.random()
-  }])
+function View() {
+  return <div>
+    hello There22
+  </div>
 }
 
 
-return(
-  <>
-  <button>Add todo</button>
-  <div>{todos.map(todo=> <Todo key={todo.id} title={todo.title} description={todo.description} />)}</div>
-  </>
-)
+function CardWrapper({innerComponent}) {
+return <div style={{border:"2px solid white" ,padding:"20px"}}>
+  {innerComponent }
 
 
-function Todo({title , description}) {
-  return(
-    <>
-    <h1>{title}</h1>
-    <h3>{description}</h3>
-    </>
-  )
+</div>
 }
+ 
+// const [todos, setTodods] = useState([{
+//   id:1,
+//   title:"go to gym",
+//   description:"got to gym today"
+// },
+// {
+//   id:2,
+//   title:"go to room",
+//   description:"got to bed today"
+// },
+// {
+//   id:3,
+//   title:"go to ground",
+//   description:"play something today"
+// }
+
+// ])
+
+// function addTodo() {
+//   setTodods([...todos,{
+//     id:counter++,
+//     title:Math.round(),
+//     description:Math.random()
+//   }])
+// }
+
+
+// return(
+//   <>
+//   <button>Add todo</button>
+//   <div>{todos.map(todo=> <Todo key={todo.id} title={todo.title} description={todo.description} />)}</div>
+//   </>
+// )
+
+
+// function Todo({title , description}) {
+//   return(
+//     <>
+//     <h1>{title}</h1>
+//     <h3>{description}</h3>
+//     </>
+//   )
+// }
 
 //   return (
 //     <Fragment>  
@@ -90,8 +124,13 @@ function Todo({title , description}) {
 // //     </>
 // //   )
 // // }
-}
-export default App
+
+
+
+
+
+
+
 
 
 //  <reactLogo.fragment></reactLogo.fragment>
