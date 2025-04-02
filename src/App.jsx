@@ -1,22 +1,36 @@
-import React,{ memo, useState,Fragment } from 'react'
-
+import React,{ useEffect, useState,Fragment } from 'react'
+import axios from "axios";
 import './App.css'
 
 function App() {
 const[count,setCount] = useState(0);
-
+useEffect(()=>{
+axios.get("http://sum-server.110xdevs.com/todos")
+.then((response)=>{
+   setCount(response.data.todos)
+})
+},[])
 
 return <>
-<button onClick={function () {
-   setCount(count+1);
-}}> Click Me</button>
+{count.map(todo=> <Todo title={count.title} description={count.description}/> )}
  
 
 </>
 
 }
 
+function Todo({title,description}) {
+   return <div>
+      <h1>{title}</h1>
+      <h3>{description}</h3>
+   </div>
+}
 
+
+
+
+ 
+export default App
 
 // function CardWrapper({children}) {
 // return <div style={{border:"2px solid white" ,padding:"20px"}}>
@@ -25,8 +39,6 @@ return <>
 
 // </div>
 // }
- 
-export default App
 
 // const [todos, setTodods] = useState([{
 //   id:1,
