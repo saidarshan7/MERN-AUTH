@@ -3,14 +3,13 @@ import React,{ memo, useState,Fragment } from 'react'
 import './App.css'
 
 function App() {
-
+const[count,setCount] = useState(0);
 
 
 return <>
- <CardWrapper>
-  hello There
- </CardWrapper>
-
+<button onClick={function () {
+   setCount(count+1);
+}}> Click Me</button>
  
 
 </>
@@ -19,13 +18,13 @@ return <>
 
 
 
-function CardWrapper({children}) {
-return <div style={{border:"2px solid white" ,padding:"20px"}}>
+// function CardWrapper({children}) {
+// return <div style={{border:"2px solid white" ,padding:"20px"}}>
  
-{children}
+// {children}
 
-</div>
-}
+// </div>
+// }
  
 export default App
 
